@@ -1,0 +1,309 @@
+/* --- Color Palette Definition --- */
+:root {
+  --dark-bg: #111827;
+  --dark-bg-secondary: #1F2937;
+  --border-color: #374151;
+  --text-primary: #F9FAFB;
+  --text-secondary: #9CA3AF;
+  --accent-blue: #3B82F6;
+  --accent-green: #10B981;
+  --accent-red: #EF4444;
+  --font-family: 'Inter', sans-serif;
+}
+
+/* --- Global Styles --- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--dark-bg);
+  background-image: radial-gradient(circle at 1px 1px, var(--border-color) 1px, transparent 0);
+  background-size: 25px 25px;
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  margin: 0;
+}
+
+/* --- Layout and Container Styles --- */
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  margin: 0 -2rem;
+  background-color: rgba(17, 24, 39, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+header nav a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 2rem;
+  transition: color 0.2s;
+}
+
+header nav a:hover {
+  color: var(--text-primary);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding-top: 40px;
+}
+
+section {
+  padding-top: 60px;
+  margin-top: -60px;
+}
+
+/* --- Scroll Animation Styles --- */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.hero-section {
+  text-align: center;
+  padding-top: 80px;
+  margin-top: -60px;
+}
+
+.hero-section h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.dashboard {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.dashboard h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  background-color: var(--dark-bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 16px; /* Increased curvature */
+  padding: 20px;
+}
+
+.stat-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.stat-card .amount {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.stat-card .savings-positive {
+  color: var(--accent-green);
+}
+
+.stat-card .savings-negative {
+  color: var(--accent-red);
+}
+
+form {
+  background-color: var(--dark-bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 16px; /* Increased curvature */
+  padding: 24px;
+  width: 100%;
+  flex: 1;
+  min-width: 400px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+  background-color: var(--dark-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 12px;
+  border-radius: 8px; /* Increased curvature */
+  font-size: 1rem;
+  width: 95%;
+}
+
+button {
+  background-color: var(--accent-blue);
+  color: white;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px; /* Increased curvature */
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #2563EB;
+}
+
+button.delete-button {
+  background-color: transparent;
+  color: var(--text-secondary);
+  padding: 5px;
+}
+
+button.delete-button:hover {
+  background-color: var(--accent-red);
+  color: white;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: var(--dark-bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 12px; /* Increased curvature */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: none;
+}
+
+.category-buttons, .subcategory-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.category-btn, .subcategory-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--dark-bg);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px; /* Increased curvature */
+}
+
+.category-btn.active, .subcategory-btn.active {
+  background-color: var(--accent-blue);
+  color: white;
+  border-color: var(--accent-blue);
+}
+
+.budget-manager {
+  background-color: var(--dark-bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 16px; /* Increased curvature */
+  padding: 20px;
+}
+
+.budget-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.budget-input label {
+  font-weight: bold;
+}
+
+/* --- REACT TABS STYLES --- */
+.react-tabs {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.react-tabs__tab-list {
+  border-bottom: 1px solid var(--border-color);
+  margin: 0 0 20px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.react-tabs__tab {
+  display: inline-block;
+  border: 1px solid transparent;
+  border-bottom: none;
+  bottom: -1px;
+  position: relative;
+  list-style: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.react-tabs__tab--selected {
+  background: var(--dark-bg);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+  border-radius: 12px 12px 0 0; /* Increased curvature */
+}
+
+.react-tabs__tab--disabled {
+  color: #444;
+  cursor: default;
+}
+
+.react-tabs__tab-panel {
+  display: none;
+}
+
+.react-tabs__tab-panel--selected {
+  display: block;
+}

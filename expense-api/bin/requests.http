@@ -1,0 +1,67 @@
+### Create a new expense
+POST http://localhost:8081/api/expenses
+Content-Type: application/json
+
+{
+  "description": "Coffee with client",
+  "amount": 5.75,
+  "date": "2025-09-15",
+  "category": "Business"
+}
+
+### Create another expense for variety
+POST http://localhost:8081/api/expenses
+Content-Type: application/json
+
+{
+  "description": "Office supplies",
+  "amount": 45.20,
+  "date": "2025-09-14",
+  "category": "Supplies"
+}
+
+### Get all expenses
+GET http://localhost:8081/api/expenses
+
+### Get expense by ID (replace 1 with a valid ID)
+GET http://localhost:8081/api/expenses/3
+
+### Get expense by ID (replace 1 with a valid ID)
+GET http://localhost:8081/api/expenses/4
+
+
+
+### Update an existing expense (replace 1 with a valid ID)
+PUT http://localhost:8081/api/expenses/1
+Content-Type: application/json
+
+{
+  "description": "Updated Description: Monthly Software Subscription",
+  "amount": 50.00,
+  "date": "2025-09-16",
+  "category": "Software"
+}
+
+### Delete an expense (replace 1 with a valid ID)
+DELETE http://localhost:8081/api/expenses/2
+
+### Create a new income entry
+POST http://localhost:8081/api/incomes
+Content-Type: application/json
+
+{
+  "description": "Monthly Salary",
+  "amount": 5000.00,
+  "date": "2025-09-01"
+}
+
+### Create a new budget entry
+POST http://localhost:8081/api/budgets
+Content-Type: application/json
+
+{
+"year": 2025,
+"month": 9,
+"category": "Food",
+"allocatedAmount": 500
+}
